@@ -1,0 +1,148 @@
+title: Manual of Style
+introduction: "This manual profides a high-level overview of design principles laid in the foundation of Gatsby Guides. Our goal is to provide general guidelines for designers, developers, and managers to empower them to create consistent and user-friendly products."
+sections:
+  - title: Logo
+    p: "Our logo is the basic element upon which we build our identity. Based on ingenious _Futura_ made by Paul Renner at the beginning of the previous century it symbolizes strive for overcoming one's limitations, for endless cycle for improvement, and for reason at the foundation of everything we do."
+    subSections:
+      - title: Longhand
+        blocks:
+          - type: p
+            text: "The full version of the logo takes the priority. Whenever there is enough space it's necessary to us the full version to promote the brand name."
+          - type: img
+            src: "logo-longhand-background.svg"
+            alt: "Longhand version of the logo"
+          - type: downloads
+            file: download longhand logo
+            content:
+              - format: SVG
+                src: "logo_longhand/logo_longhand.svg"
+                title: Adobe Illustrator File
+                color: "#8484d8"
+              - format: PDF
+                src: "logo_longhand/logo_longhand.pdf"
+                title: Portable Document Format
+                color: "#f91d10"
+              - format: AI
+                src: "logo_longhand/logo_longhand.ai"
+                title: Portable Document Format
+                color: "#f48400"
+      - title: Shorthand
+        blocks:
+          - type: p
+            text: "If the space is confined or the aspect ratio is 1:1, it's preferrable to use the shorthand. Examples are favicons, social media avatars, icons."
+          - type: img
+            src: "logo_shorthand.svg"
+            alt: "Longhand version of the logo"
+          - type: downloads
+            file: Download shorthand logo
+            content:
+              - format: SVG
+                src: "logo_shorthand/logo_shorthand.svg"
+                title: Adobe Illustrator File
+                color: "#8484d8"
+              - format: PDF
+                src: "logo_shorthand/logo_shorthand.pdf"
+                title: Portable Document Format
+                color: "#f91d10"
+              - format: AI
+                src: "logo_shorthand/logo_shorthand.ai"
+                title: Portable Document Format
+                color: "#f48400"
+      - title: Exclusion Zone
+        blocks:
+          - type: p
+            text: 'The key to the successful logo display is leaving enough space to "breath". This guideline sets the _minimal_ amount needed, but feel free to experiment with the white space.'
+          - type: img
+            src: exclusion_zone.svg
+            alt: "Exclusion zone: amount of whitespace needed"
+      - title: Minimum Size
+        blocks:
+          - type: p
+            text: "In order to keep the logomarks readable we should maintain comfort sizing. For the longhand, the minimum is `200px` wide (preserved aspect ratio) and for the shorthand, it's `16px`."
+          - type: img
+            src: minimum_size.svg
+            alt: "Minimum 1.5 inches or 200 pixels wide for the longhand and 0.25 inches or 16 pixels wide for the shorthand"
+  - title: Typography
+    subSections:
+      - title: Typeface
+        blocks:
+          - type: p
+            text: "Humanist influenced grotesque _Source Sans Pro_ designed by Paul D. Hunt in 2012 is the typeface of our choice. It combines the geometric design of the roaring '20s with the cordial and friendly touch."
+          - type: p
+            text: "The typeface is part of a larger typographic system that also includes monospace _Source Code Pro_ as well as serif _Source Serif Pro_. We recommend using the former for all code samples, and the later for creating emotionally attractive headlines."
+          - type: img
+            src: "typeface.svg"
+            alt: "The typeface specimen showing the lettershapes"
+          - type: downloads
+            file: Download Source Sans Pro
+            content:
+              - format: ZIP
+                src: "source_sans_pro.zip"
+                title: Archive File Format
+                color: "#8484d8"
+      - title: Scale
+        blocks:
+          - type: p
+            text: "Typography is based on proportions. It doesn't matter which font size you choose as long as you preserve the ratio of `1.25` between the elements. For instance, a headline font size should correspond to the body copy font size as a factor of `1.25`. This creates a harmonious relationship between the text elements."
+          - type: scale
+            text: "The quick brown fox jumps over the lazy dog."
+            sizes: [-2, -1, 0, 1, 2, 3, 5]
+      - title: Rhythm
+        blocks:
+          - type: p
+            text: "As with the scale, it's important to exercise consistent vertical spacing between the elements for better composition and comprehension. This should correspond to the x-height of the body copy point size."
+  - title: Colors
+    subSections:
+      - title: Palette
+        blocks:
+          - type: p
+            text: "Humans are visual creatures, and we love colors. The current palette was derived for contrast and vibrancy. The obvious white is not included, but use it for the body copy and any other non-interactive elements. For emphasis and interactivity use _Pale Robin_ and _Pale Violet_. For backgrounds _Charcoal_ and _Onyx_."
+          - type: colors
+            colors:
+              - name: Charcoal
+                colorValues:
+                  - type: HEX
+                    value: "#1d1c29"
+                  - type: RGB
+                    value: "29, 28, 41"
+                  - type: HSL
+                    value: "245, 19, 14"
+              - name: Onyx
+                colorValues:
+                  - type: HEX
+                    value: "#272636"
+                  - type: RGB
+                    value: "39, 38, 54"
+                  - type: HSL
+                    value: "245, 18, 18"
+              - name: Pale Robin
+                colorValues:
+                  - type: HEX
+                    value: "#93ead2"
+                  - type: RGB
+                    value: "147, 234, 210"
+                  - type: HSL
+                    value: "163, 37, 92"
+              - name: Pale Violet
+                colorValues:
+                  - type: HEX
+                    value: "#a89aff"
+                  - type: RGB
+                    value: "168, 154, 255"
+                  - type: HSL
+                    value: "248, 100, 80"
+          - type: downloads
+            file: Download Color Swatches
+            content:
+              - format: ACO
+                src: "colors.aco"
+                title: Adobe Color Palette
+                color: "#8484d8"
+              - format: ASE
+                src: "colors.ase"
+                title: Adobe Swatch Exchange
+                color: "#8484d8"
+              - format: SVG
+                src: "colors.svg"
+                title: Scalable Vector Graphics
+                color: "#8484d8"
