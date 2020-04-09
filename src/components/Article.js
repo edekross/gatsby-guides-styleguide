@@ -22,7 +22,7 @@ class Block extends Component {
       gap: ${vr(0.5)}rem;
       justify-content: space-between;
       margin-top: ${vr(1)}rem;
-    `
+    `,
   };
   render() {
     const { type } = this.props;
@@ -43,9 +43,9 @@ class Block extends Component {
         const { colors } = this.props;
         return (
           <ul className={this.styles.colorPalette}>
-            {colors.map(color => (
-              <li>
-                <ColorChip key={color.name} {...color} />
+            {colors.map((color) => (
+              <li key={color.name}>
+                <ColorChip {...color} />
               </li>
             ))}
           </ul>
@@ -107,7 +107,7 @@ class Block extends Component {
 }
 
 class ColorChip extends Component {
-  copy = value => {
+  copy = (value) => {
     console.log(value);
   };
   render() {
@@ -156,7 +156,7 @@ class ColorChip extends Component {
             >
               {name}
             </dt>
-            {colorValues.map(value => (
+            {colorValues.map((value) => (
               <dd key={value.type}>
                 <span
                   className={css`
@@ -185,8 +185,8 @@ class ColorChip extends Component {
 
 function createSizes(sizes) {
   return sizes
-    .map(s => convertRemToPixels(s))
-    .map(s => `sizes[]=${s}`)
+    .map((s) => convertRemToPixels(s))
+    .map((s) => `sizes[]=${s}`)
     .toString();
 }
 
@@ -203,7 +203,7 @@ class SubSection extends Component {
       font-size: ${ms(1)}rem;
       margin-top: ${vr(3)}rem;
       font-weight: bold;
-    `
+    `,
   };
   render() {
     const { title, blocks } = this.props;
@@ -236,7 +236,7 @@ function Scale({ text, sizes }) {
         padding: ${vr(1)}rem ${vr(1)}rem ${vr(0.25)}rem;
       `}
     >
-      {sizes.map(size => {
+      {sizes.map((size) => {
         return (
           <li
             key={size}
@@ -305,7 +305,7 @@ export default class Article extends Component {
       font-size: ${ms(2)}rem;
       font-weight: bold;
       margin-top: ${vr(3)}rem;
-    `
+    `,
   };
   render() {
     const { title, introduction, sections } = this.props;
@@ -313,7 +313,7 @@ export default class Article extends Component {
       <article className={this.styles.article}>
         <h2 className={this.styles.h2}>{title}</h2>
         <Paragraph text={introduction} />
-        {sections.map(section => (
+        {sections.map((section) => (
           <section
             id={kebabCase(section.title)}
             className={this.styles.section}
@@ -321,7 +321,7 @@ export default class Article extends Component {
           >
             <h3 className={this.styles.h3}>{section.title}</h3>
             {section.p && <Paragraph text={section.p} />}
-            {section.subSections.map(subSection => (
+            {section.subSections.map((subSection) => (
               <SubSection
                 id={`${kebabCase(section.title)}-${kebabCase(
                   subSection.title
