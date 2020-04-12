@@ -4,13 +4,13 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/App.js",
   node: {
-    fs: "empty"
+    fs: "empty",
   },
   resolve: {
     alias: {
       "~attachments": path.resolve(__dirname, "src/assets/attachments/"),
-      "~images": path.resolve(__dirname, "src/assets/images/")
-    }
+      "~images": path.resolve(__dirname, "src/assets/images/"),
+    },
   },
   module: {
     rules: [
@@ -24,12 +24,12 @@ module.exports = {
                 loader: "file-loader",
                 options: {
                   esModule: false,
-                  name: "[name].[ext]"
-                }
-              }
-            ]
-          }
-        ]
+                  name: "[name].[ext]",
+                },
+              },
+            ],
+          },
+        ],
       },
       {
         test: /\.svg(\?.*)?$/,
@@ -38,7 +38,7 @@ module.exports = {
             resourceQuery: /svgr/,
             use: [
               {
-                loader: "@svgr/webpack"
+                loader: "@svgr/webpack",
               },
               {
                 loader: "svgo-loader",
@@ -46,11 +46,11 @@ module.exports = {
                   plugins: [
                     { removeTitle: true },
                     { removeDimensions: true },
-                    { removeAttrs: { attrs: "data-name" } }
-                  ]
-                }
-              }
-            ]
+                    { removeAttrs: { attrs: "data-name" } },
+                  ],
+                },
+              },
+            ],
           },
           {
             resourceQuery: /ext/,
@@ -58,8 +58,8 @@ module.exports = {
               {
                 loader: "file-loader",
                 options: {
-                  esModule: false
-                }
+                  esModule: false,
+                },
               },
               {
                 loader: "svgo-loader",
@@ -67,17 +67,17 @@ module.exports = {
                   plugins: [
                     { removeTitle: true },
                     { removeDimensions: true },
-                    { removeAttrs: { attrs: "data-name" } }
-                  ]
-                }
-              }
-            ]
-          }
-        ]
+                    { removeAttrs: { attrs: "data-name" } },
+                  ],
+                },
+              },
+            ],
+          },
+        ],
       },
       {
         test: /\.yaml$/,
-        use: ["json-loader", "yaml-loader"]
+        use: ["json-loader", "yaml-loader"],
       },
       {
         test: /\.(js)$/,
@@ -86,17 +86,17 @@ module.exports = {
             loader: "babel-loader",
             options: {
               presets: ["@babel/preset-env", "@babel/preset-react"],
-              plugins: ["emotion", "@babel/plugin-proposal-class-properties"]
-            }
-          }
-        ]
+              plugins: ["emotion", "@babel/plugin-proposal-class-properties"],
+            },
+          },
+        ],
       },
       {
         test: /\.(jpe?g|png)$/i,
         loader: "responsive-loader",
         options: {
-          adapter: require("responsive-loader/sharp")
-        }
+          adapter: require("responsive-loader/sharp"),
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf)$/,
@@ -104,33 +104,33 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              esModule: false
-            }
-          }
+              esModule: false,
+            },
+          },
           // {
           //   loader: "url-loader",
           //   options: {
           //     limit: 2048
           //   }
           // }
-        ]
+        ],
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      }
-    ]
+        use: ["style-loader", "css-loader"],
+      },
+    ],
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js"
+    filename: "bundle.js",
   },
   plugins: [
     new HTMLWebpackPlugin({
       filename: "index.html",
       template: "src/index.html",
-      title: "Gatsby Guides Styleguide"
-    })
+      title: "Gatsby Guides Styleguide",
+    }),
   ],
-  mode: "development"
+  mode: process.env.NODE_ENV === "production" ? "production" : "development",
 };
